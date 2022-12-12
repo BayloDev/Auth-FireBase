@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "617031189430",
+    "firebase_url": "https://mystic-airway-358721-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "mystic-airway-358721",
+    "storage_bucket": "mystic-airway-358721.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:617031189430:android:9e02e10f37b5d5832fb717",
+        "android_client_info": {
+          "package_name": "com.example.first_firebase_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "617031189430-61dal570p00bnkmtraocasbiim4dlbbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX_JTXt5-Wiza3NgDses2Ohg2hcOjsK6c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "617031189430-61dal570p00bnkmtraocasbiim4dlbbc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "617031189430-4oftc334ppfbaiindh230idrj0svpcat.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firstFirebaseProject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

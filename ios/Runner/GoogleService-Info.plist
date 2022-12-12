@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>617031189430-4oftc334ppfbaiindh230idrj0svpcat.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.617031189430-4oftc334ppfbaiindh230idrj0svpcat</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC2xcraDzKP7KhvrrWFDuDyqeMjr8Uangg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>617031189430</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.firstFirebaseProject</string>
+	<key>PROJECT_ID</key>
+	<string>mystic-airway-358721</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mystic-airway-358721.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:617031189430:ios:659c0fdd227156bd2fb717</string>
+	<key>DATABASE_URL</key>
+	<string>https://mystic-airway-358721-default-rtdb.europe-west1.firebasedatabase.app</string>
+</dict>
+</plist>
