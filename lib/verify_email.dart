@@ -65,26 +65,28 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
   }
 
   Future checkEmailVerified() async {
-    await FirebaseAuth.instance.currentUser?.reload();
-    setState(
-      () => isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified,
-    );
-
-    if (isEmailVerified) {
-      scaffoldKeyEmailVer.currentState!.showSnackBar(
-        snackBarEmailVer('Your account has been created successfully'),
+    try {
+      await FirebaseAuth.instance.currentUser?.reload();
+      setState(
+        () =>
+            isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified,
       );
 
-      Future.delayed(
-        const Duration(seconds: 5),
-        () {
-          setState(() {
-            isVerified = isEmailVerified;
-          });
-        },
-      );
-      timerEmail?.cancel();
-    }
+      if (isEmailVerified == true) {
+        scaffoldKeyEmailVer.currentState!.showSnackBar(
+          snackBarEmailVer('Your account has been created successfully'),
+        );
+
+        Future.delayed(
+          const Duration(seconds: 5),
+          () {
+            setState(() => isVerified = isEmailVerified);
+          },
+        );
+        timerEmail?.cancel();
+      }
+      // ignore: empty_catches
+    } catch (e) {}
   }
 
   @override
@@ -101,8 +103,10 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
       await Future.delayed(const Duration(seconds: 5));
       setState(() => isResent = true);
     } catch (e) {
-      scaffoldKeyEmailVer.currentState!
-          .showSnackBar(snackBarEmailVer(e.toString()));
+      isSignOut
+          ? null
+          : scaffoldKeyEmailVer.currentState!
+              .showSnackBar(snackBarEmailVer(e.toString()));
     }
   }
 
