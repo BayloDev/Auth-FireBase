@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:first_firebase_project/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'auth_email.dart';
+import 'home_page.dart';
 
 class EmailVerificationPage extends StatefulWidget {
   const EmailVerificationPage({super.key});
@@ -18,6 +18,7 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
   bool isVerified = false;
   Timer? timerEmail;
   bool isResent = false;
+  bool isSignOut = false;
 
   GlobalKey<ScaffoldMessengerState> scaffoldKeyEmailVer =
       GlobalKey<ScaffoldMessengerState>();
@@ -46,13 +47,20 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
   @override
   void initState() {
     super.initState();
-    isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
-    if (!isEmailVerified) {
-      sendVerificationEmail();
-      timerEmail = Timer.periodic(
-        const Duration(seconds: 3),
-        (timer) => checkEmailVerified(),
-      );
+    if (isSignOut == false) {
+      isEmailVerified = FirebaseAuth.instance.currentUser!.emailVerified;
+
+      if (isEmailVerified != true) {
+        sendVerificationEmail();
+        timerEmail = Timer.periodic(
+          const Duration(seconds: 3),
+          (timer) {
+            isSignOut == false ? checkEmailVerified() : null;
+          },
+        );
+      }
+    } else {
+      timerEmail!.cancel();
     }
   }
 
@@ -153,6 +161,8 @@ class _EmailVerificationPageState extends State<EmailVerificationPage> {
                     ElevatedButton.icon(
                       onPressed: () {
                         FirebaseAuth.instance.signOut();
+
+                        setState(() => isSignOut = true);
 
                         Navigator.of(context).pushReplacement(
                           MaterialPageRoute(

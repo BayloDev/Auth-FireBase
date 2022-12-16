@@ -1,10 +1,10 @@
 // ignore_for_file: avoid_print, use_build_context_synchronously
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:first_firebase_project/auth_methods_page.dart';
 import 'package:flutter/material.dart';
 
-import 'verify_email_page.dart';
+import 'auth_methods_page.dart';
+import 'verify_email.dart';
 
 class AuthEmailPage extends StatefulWidget {
   const AuthEmailPage({Key? key}) : super(key: key);
