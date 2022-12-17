@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:first_firebase_project/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'auth_methods_page.dart';
 import 'firebase_options.dart';
+import 'storage_page.dart';
 
 bool? isSinUp;
 void main() async {
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: isSinUp == false ? const AuthMethodsPage() : const HomePage(),
+        body: isSinUp == false ? const AuthMethodsPage() : const StoragePage(),
       ),
     );
   }
