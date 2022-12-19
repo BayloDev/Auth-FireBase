@@ -24,6 +24,7 @@ dependencies:
   jiffy: ^5.0.0
   shared_preferences: ^2.0.15
   flutter_facebook_auth: ^5.0.6
+  another_flushbar: ^1.12.29
 
 dev_dependencies:
   flutter_test:
