@@ -3,13 +3,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:first_firebase_project/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'auth_methods_page.dart';
-import 'cloud_messaging_notification.dart';
 import 'firebase_options.dart';
 
 bool? isSinUp;
+//send a notification on backround
 Future<void> backgroundMessag(RemoteMessage message) async {
   print('========Background Notification');
   print(message.notification!.body);
@@ -41,9 +42,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        body: isSinUp == false
-            ? const AuthMethodsPage()
-            : const NotificationPage(),
+        body: isSinUp == false ? const AuthMethodsPage() : const HomePage(),
       ),
     );
   }

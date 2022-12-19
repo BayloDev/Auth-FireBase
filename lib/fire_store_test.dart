@@ -306,7 +306,7 @@ class _FireBaseStoreState extends State<FireBaseStore> {
       .collection('users')
       .doc('DCfMbMxgkFK4xqR4wnjb');
 
-  transaction() {
+  voidtransaction() {
     FirebaseFirestore.instance.runTransaction((transaction) async {
       DocumentSnapshot docSnap = await transaction.get(docUserTrans);
       if (docSnap.exists) {
