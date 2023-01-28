@@ -232,7 +232,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // update user with set => recreate the user
+ 
   updateUserwithSet() {
     FirebaseFirestore.instance.collection('users').doc('12346667').set(
       {
@@ -243,7 +243,7 @@ class _HomePageState extends State<HomePage> {
       },
     );
   }
-  // update user with set =>don't recreate the user, just update, and if the user doesnt exit it create it, update -> give us error
+
 
   updateUserwithSetOptions() {
     FirebaseFirestore.instance
@@ -301,7 +301,7 @@ class _HomePageState extends State<HomePage> {
         );
   }
 
-  // transaction : used to verify if the data has been change successfuly for all doctument , expemle when you change your name on fb
+
   DocumentReference docUserTrans = FirebaseFirestore.instance
       .collection('users')
       .doc('DCfMbMxgkFK4xqR4wnjb');
@@ -318,7 +318,7 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  // batch write : lets us to execute multiple write operations as a single batch any combination of set , update, or delete operations, all excute succseccfully or all failed
+
   DocumentReference docUserBatch1 = FirebaseFirestore.instance
       .collection('users')
       .doc('tQModEEMuAbaO02XpUe5');
