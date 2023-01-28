@@ -10,7 +10,7 @@ import 'auth_methods_page.dart';
 import 'firebase_options.dart';
 
 bool? isSinUp;
-//send a notification on backround
+
 Future<void> backgroundMessag(RemoteMessage message) async {
   print('========Background Notification');
   print(message.notification!.body);
