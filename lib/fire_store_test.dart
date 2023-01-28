@@ -243,7 +243,7 @@ class _FireBaseStoreState extends State<FireBaseStore> {
       },
     );
   }
-  // update user with set =>don't recreate the user, just update, and if the user doesnt exit it create it, update -> give us error
+
 
   updateUserwithSetOptions() {
     FirebaseFirestore.instance
@@ -301,7 +301,7 @@ class _FireBaseStoreState extends State<FireBaseStore> {
         );
   }
 
-  // transaction : used to verify if the data has been change successfuly for all doctument , expemle when you change your name on fb
+
   DocumentReference docUserTrans = FirebaseFirestore.instance
       .collection('users')
       .doc('DCfMbMxgkFK4xqR4wnjb');
@@ -318,7 +318,6 @@ class _FireBaseStoreState extends State<FireBaseStore> {
     });
   }
 
-  // batch write : lets us to execute multiple write operations as a single batch any combination of set , update, or delete operations, all excute succseccfully or all failed
   DocumentReference docUserBatch1 = FirebaseFirestore.instance
       .collection('users')
       .doc('tQModEEMuAbaO02XpUe5');
@@ -393,7 +392,7 @@ class _FireBaseStoreState extends State<FireBaseStore> {
           title: const Text('Welcome'),
           backgroundColor: Colors.orange,
         ),
-        //first method to display data in UI with list
+        //first method to display data with list
         // body: Center(
         //   child: (users.isEmpty)
         //       ? Column(
@@ -419,7 +418,7 @@ class _FireBaseStoreState extends State<FireBaseStore> {
         //         ),
         // ),
 
-        //second method to display data in UI with FutureBuilder we dont need to initState !!
+        //second method to display data with FutureBuilder we dont need to initState !!
         // body: Center(
         //   child: FutureBuilder(
         //       future: usersRef.get(),
@@ -457,7 +456,7 @@ class _FireBaseStoreState extends State<FireBaseStore> {
         //       }),
         // ),
 
-        //third method to display data in UI with streamBuilder for real time
+        //third method to display data with streamBuilder for real time
 
         body: Center(
           child: StreamBuilder(
